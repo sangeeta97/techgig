@@ -1,0 +1,29 @@
+import sys
+u1 = sys.stdin.readlines()
+def main():
+    
+    for s1 in u1[1:]:
+        if len(s1) > 1:
+            p1= [s1.count(x) for x in s1]
+
+
+            
+            q1= list(set([x for x in p1 if p1.count(x) > 1]))
+            t2= max(p1)
+            if len(q1) > 0:
+                t1= max(q1)
+            if t2 > t1:
+                k1= s1.index(max([s1.count(x) for x in s1]))
+                print(s1[k1])
+            else:
+                idx = [i for i in range(len(p1)) if p1[i] == t1]
+                
+                n1= [s1[x] for x in idx]
+
+                
+                l1= [ord(str(x)) for x in n1]
+                print(n1[l1.index(min(l1))])
+
+        
+
+main()
